@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Sidebar</title>
+    <link rel="stylesheet" href="style.css">
+        <script>document.addEventListener('DOMContentLoaded', (event) => {
+            if (!sessionStorage.getItem('EMP_ID')) {
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <!-- Sidebar iframe -->
+            <iframe id="sidebar-iframe" src="sidebar.html" width="100%" height="100%" style="border: none;" title="Sidebar"></iframe>
+        </div>
+        <!-- <div class="content-slider">
+            <div class="slider">
+                <div class="slide"><img src="image1.jpg" alt="Image 1"></div>
+                <div class="slide"><img src="image2.jpg" alt="Image 2"></div>
+                <div class="slide"><img src="image3.jpg" alt="Image 3"></div>
+                <div class="slide"><img src="image4.jpg" alt="Image 4"></div>
+                <div class="slide"><img src="image5.jpg" alt="Image 5"></div>
+                <div class="slide"><img src="image6.jpg" alt="Image 6"></div>
+            </div>
+        </div> -->
+        <h1>Welcome to your Account Dashboard</h1>
+        
+        <script src="script.js"></script>
+    </div>
+
+</body>
+</html>

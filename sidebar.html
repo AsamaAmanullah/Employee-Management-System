@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="sidebar.css">
+    <script>
+        function logout() {
+            sessionStorage.setItem('EMP_ID', "");
+            window.top.location.href = 'login.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sTop">
+                <span class="span">Dashboard</span>
+            <hr class="menu-divider"/>
+            <ul class="sidebar-menu">
+                <li><a href="javascript:void(0);" onclick="window.top.location.href='profile.html';">Profile</a></li>
+                <li>
+                    <a href="#">Salary</a>
+                    <ul class="submenu">
+                        <li><a href="javascript:void(0);" onclick="window.top.location.href='generate_payroll.php';">Generate Payroll</a></li>
+                        <li><a href="javascript:void(0);" onclick="window.top.location.href='payroll_record.php';">Payroll Records</a></li>
+                        <li><a href="javascript:void(0);" onclick="window.top.location.href='paysheet.php';">Pay Sheet</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0);" onclick="window.top.location.href='attendance.php';">Attendance</a></li>
+                <li><a href="javascript:void(0);" onclick="window.top.location.href='leave.html';">Leave</a></li>
+            </ul>
+            </div>
+            <div class="sBottom">
+                <button class="logout-button"><a href="javascript:void(0);" onclick="logout()">Logout</a></button>
+            <hr class="menu-divider"/>
+            <!-- <span>Himali Janitorial and </br>Security Service</span> -->
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

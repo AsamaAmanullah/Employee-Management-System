@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        height: 100vh;
+      }
+      .topbar{
+        background-color: #ffffff;
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .topbar img {
+        width: 40px;
+        height: 30px;
+        margin-left: 20px;
+      }
+      #profileForm {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 600px;
+        padding-top: 5px;
+        margin-top: 20px;
+      }
+      #profileForm h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      #profileForm table {
+        width: 100%;
+      }
+      #profileForm table td {
+        padding: 0px 20px 0px 20px;
+        vertical-align: top;
+      }
+      #profileForm label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      #profileForm input[type="text"],
+      #profileForm select,
+      #profileForm input[type="date"],
+      #profileForm input[type="tel"] {
+        width: 100%;
+        padding: 6px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .submit-container {
+        text-align: center;
+        margin-top: 10px;
+      }
+      #profileForm input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 200px;
+      }
+      #profileForm input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+
+      #passwordForm {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 600px;
+        padding-top: 5px;
+        margin-top: 20px;
+      }
+      #passwordForm h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      #passwordForm table {
+        width: 100%;
+      }
+      #passwordForm table td {
+        padding: 8px;
+        vertical-align: top;
+      }
+      #passwordForm label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      #passwordForm input[type="password"] {
+        width: calc(100% - 20px); /* Adjusted width to account for padding */
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      #passwordForm input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 200px; /* Button width set to 100% to fill the table cell */
+      }
+      #passwordForm input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <!-- Sidebar iframe -->
+        <iframe
+          id="sidebar-iframe"
+          src="sidebar.html"
+          width="100%"
+          height="100%"
+          style="border: none"
+          title="Sidebar"
+        ></iframe>
+      </div>
+      <div class="content">
+        <div class="topbar">
+          <img src="logo.jpg">
+        </div>
+        <form id="profileForm">
+          <h1>Profile Information</h1>
+          <table>
+            <tr>
+              <td>
+                <label for="F_name">First Name:</label>
+                <input
+                  type="text"
+                  id="F_name"
+                  name="F_name"
+                  placeholder="Enter your first name"
+                  required
+                />
+              </td>
+              <td>
+                <label for="L_name">Last Name:</label>
+                <input
+                  type="text"
+                  id="L_name"
+                  name="L_name"
+                  placeholder="Enter your last name"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="NIC">NIC:</label>
+                <input
+                  type="text"
+                  id="NIC"
+                  name="NIC"
+                  placeholder="Enter your NIC number"
+                  required
+                />
+              </td>
+              <td>
+                <label for="Mobile">Mobile:</label>
+                <input
+                  type="tel"
+                  id="Mobile"
+                  name="Mobile"
+                  placeholder="Enter your mobile number"
+                  pattern="[0-9]{10}"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="Gender">Gender:</label>
+                <select id="Gender" name="Gender" required>
+                  <option value="">Select your gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+              </select>
+              </td>
+              <td>
+                <label for="DOB">Date of Birth:</label>
+                <input type="date" id="DOB" name="DOB" required />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <label for="Address">Address:</label>
+                <input
+                  type="text"
+                  id="Address"
+                  name="Address"
+                  placeholder="Enter your address"
+                  required
+                />
+              </td>
+            </tr>
+          </table>
+          <div class="submit-container">
+            <input type="submit" value="Update Profile" />
+          </div>
+        </form>
+
+        <form id="passwordForm">
+          <h1>Update Password</h1>
+          <table>
+            <tr>
+              <td>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required />
+              </td>
+              <td>
+                <label for="confirmPassword">Confirm Password:</label>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  required
+                />
+              </td>
+            </tr>
+          </table>
+          <div class="submit-container">
+            <input type="submit" value="Update Password" />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var empId = sessionStorage.getItem("EMP_ID");
+  
+        if (empId) {
+          fetch(`get_employee.php?EMP_ID=${empId}`)
+            .then((response) => response.json())
+            .then((data) => {
+              if (data) {
+                document.getElementById("F_name").value = data.F_name || "";
+                document.getElementById("L_name").value = data.L_name || "";
+                document.getElementById("NIC").value = data.NIC || "";
+                document.getElementById("Mobile").value = data.Mobile || "";
+                document.getElementById("Gender").value = data.Gender || "";
+                document.getElementById("Address").value = data.Address || "";
+                document.getElementById("DOB").value = data.DOB || "";
+              }
+            })
+            .catch((error) => console.error("Error fetching data:", error));
+        } else {
+          console.error("No EMP_ID found in sessionStorage.");
+        }
+      });
+  
+      function validateProfileForm() {const nic = document.getElementById('NIC').value;
+            const mobile = document.getElementById('Mobile').value;
+            const dob = document.getElementById('DOB').value;
+
+            // Custom NIC validation (assuming NIC should be alphanumeric and between 5-12 characters)
+            const nicPattern = /^[a-zA-Z0-9]{5,12}$/;
+            if (!nicPattern.test(nic)) {
+                alert('NIC must be alphanumeric and between 5-12 characters.');
+                event.preventDefault();
+                return;
+            }
+
+            // Custom Mobile validation (assuming 10-digit number)
+            if (!/^\d{10}$/.test(mobile)) {
+                alert('Mobile number must be exactly 10 digits.');
+                event.preventDefault();
+                return;
+            }
+
+            // Custom Date of Birth validation (assuming age should be at least 18 years)
+            const dobDate = new Date(dob);
+            const age = new Date().getFullYear() - dobDate.getFullYear();
+            const monthDiff = new Date().getMonth() - dobDate.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && new Date().getDate() < dobDate.getDate())) {
+                age--;
+            }
+
+            if (age < 18) {
+                alert('You must be at least 18 years old.');
+                event.preventDefault();
+                return;
+            }
+  
+        return true;
+      }
+  
+      document.getElementById("profileForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+  
+        if (!validateProfileForm()) {
+          return;
+        }
+  
+        var empId = sessionStorage.getItem("EMP_ID");
+  
+        var profileData = {
+          EMP_ID: empId,
+          F_name: document.getElementById("F_name").value,
+          L_name: document.getElementById("L_name").value,
+          NIC: document.getElementById("NIC").value,
+          Mobile: document.getElementById("Mobile").value,
+          Gender: document.getElementById("Gender").value,
+          Address: document.getElementById("Address").value,
+          DOB: document.getElementById("DOB").value,
+        };
+  
+        fetch("update_profile.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(profileData),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              alert("Profile updated successfully");
+            } else {
+              alert("Error updating profile");
+            }
+          })
+          .catch((error) => console.error("Error:", error));
+      });
+  
+      function validatePasswordForm() {
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+  
+        if (password !== confirmPassword) {
+          alert("Passwords do not match");
+          return false;
+        }
+  
+        return true;
+      }
+  
+      document.getElementById("passwordForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+  
+        if (!validatePasswordForm()) {
+          return;
+        }
+  
+        var password = document.getElementById("password").value;
+        var empId = sessionStorage.getItem("EMP_ID");
+  
+        fetch("update_password.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            EMP_ID: empId,
+            password: password,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              alert("Password updated successfully");
+            } else {
+              console.log(data);
+              alert("Error updating password");
+            }
+          })
+          .catch((error) => console.error("Error:", error));
+      });
+    </script> 
+  </body>
+</html>

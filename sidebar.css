@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 250px;
+    height: 100%;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: relative;
+    background-color: #0e2238;
+    color: white;
+    padding-top: 20px;
+    text-align: center; /* Center all text in the sidebar */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center;
+}
+
+.sTop {
+    position: absolute; /* Position div 'sTop' absolutely */
+    top: 0; /* Place div 'sTop' at the top */
+}
+
+.sBottom {
+    position: absolute; /* Position div 'sBottom' absolutely */
+    bottom: 30px; /* Place div 'sBottom' at the bottom */
+    width: 100px;
+}
+
+.span {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px 0;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Align text to the left for the menu */
+}
+
+.sidebar-menu li {
+    padding: 15px 20px;
+    position: relative;
+}
+
+.sidebar-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar-menu li a:hover {
+    background-color: #575757;
+}
+
+.menu-divider {
+    border: 0;
+    height: 1px;
+    background: #575757;
+    margin: 10px 20px;
+}
+
+.submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 20px; /* Indent submenus */
+   /* display: none; /* Hide submenu by default */
+}
+
+.sidebar-menu li:hover > .submenu {
+    display: block; /* Show submenu on hover */
+}
+
+.submenu li {
+    padding: 10px 20px;
+}
+
+.submenu li a {
+    color: white; /* Lighter color for submenus */
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    color: #111;
+}
+
+.content h1 {
+    margin: 0;
+}
+
+#iframe-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* sidebar.css */
+
+.logout-button {
+    display: block;
+    border-radius: 5px;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+    background-color: #f44336; /* Red background */
+    color: white; /* White text */
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.logout-button a {
+    color: white; /* Ensure the text is white */
+    text-decoration: none; /* Remove underline */
+}
+
+.logout-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
